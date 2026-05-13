@@ -15,7 +15,7 @@
     --card: #ffffff;
     --border: #fde68a;
     --yes: #059669;
-    --warn: #d97706;
+    --no: #dc2626;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
@@ -88,10 +88,8 @@
     border-radius: 100px;
     display: inline-block;
   }
-  .val.no-val { background: #fef2f2; color: #dc2626; }
+  .val.no-val { background: #fef2f2; color: var(--no); }
   .val.yes-val { background: #f0fdf4; color: var(--yes); }
-  .val.warn-val { background: #fffbeb; color: var(--warn); }
-
   .section { margin-bottom: 36px; }
   .section-title {
     font-family: 'DM Serif Display', serif;
@@ -122,8 +120,6 @@
     margin-bottom: 12px;
   }
   .section a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  .section a:hover { text-decoration: underline; }
-
   .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
   .pill {
     padding: 6px 14px;
@@ -133,9 +129,7 @@
     display: flex; align-items: center; gap: 6px;
   }
   .pill.red { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
-  .pill.amber { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
   .pill.green { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
-
   .highlight {
     background: linear-gradient(135deg, #fef9c3, #fef08a);
     border: 1px solid #fde047;
@@ -144,37 +138,6 @@
     margin: 20px 0;
   }
   .highlight p { color: #713f12; margin: 0; font-size: 15px; }
-
-  .warn-box {
-    background: linear-gradient(135deg, #fffbeb, #fef3c7);
-    border: 1px solid #fde68a;
-    border-radius: 14px;
-    padding: 20px 22px;
-    margin: 20px 0;
-  }
-  .warn-box p { color: #78350f; margin: 0; font-size: 15px; line-height: 1.7; }
-
-  .bullet-list {
-    list-style: none;
-    margin: 12px 0;
-    padding: 0;
-  }
-  .bullet-list li {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.8;
-    padding-left: 20px;
-    position: relative;
-    margin-bottom: 4px;
-  }
-  .bullet-list li::before {
-    content: '•';
-    color: var(--accent);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-  }
-
   .contact-box {
     background: var(--card);
     border: 1px solid var(--border);
@@ -196,7 +159,6 @@
   .contact-box h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
   .contact-box p { color: var(--muted); font-size: 14px; line-height: 1.8; margin: 0; }
   .contact-box a { color: var(--accent); text-decoration: none; font-weight: 500; }
-
   .footer {
     text-align: center;
     padding: 32px 24px;
@@ -221,8 +183,8 @@
   <div class="summary-grid">
     <div class="summary-card">
       <div class="icon">📊</div>
-      <div class="label">Personal Data</div>
-      <div class="val no-val">Not Collected</div>
+      <div class="label">Data Collection</div>
+      <div class="val no-val">None</div>
     </div>
     <div class="summary-card">
       <div class="icon">🔐</div>
@@ -232,17 +194,17 @@
     <div class="summary-card">
       <div class="icon">📢</div>
       <div class="label">Advertisements</div>
-      <div class="val warn-val">Google AdMob</div>
+      <div class="val no-val">No Ads</div>
     </div>
     <div class="summary-card">
       <div class="icon">🆔</div>
       <div class="label">Advertising ID</div>
-      <div class="val warn-val">AdMob Only</div>
+      <div class="val no-val">Not Used</div>
     </div>
     <div class="summary-card">
       <div class="icon">🌐</div>
-      <div class="label">Internet</div>
-      <div class="val warn-val">Ads Only</div>
+      <div class="label">Internet Access</div>
+      <div class="val no-val">Not Required</div>
     </div>
     <div class="summary-card">
       <div class="icon">🆓</div>
@@ -254,75 +216,82 @@
   <div class="section">
     <div class="section-title"><span class="num">1</span> Overview</div>
     <p>This Privacy Policy describes how Dragoster Studios ("we", "us", or "our") handles information in connection with the <strong>King vs Monsters : Platformer</strong> mobile game application ("the App") available on Google Play.</p>
-    <p>King vs Monsters : Platformer is a 2D platformer game designed for entertainment purposes. We do not collect, store, or process any personal information directly. However, the App uses Google AdMob to display advertisements, which may collect certain data as described below.</p>
+    <p>King vs Monsters : Platformer is a simple offline 2D platformer game built purely for entertainment. The App does not collect, store, transmit, or share any personal information whatsoever.</p>
     <div class="highlight">
-      <p>🛡️ <strong>Short version:</strong> We personally collect nothing. Ads are shown via Google AdMob which may collect device and usage data for ad delivery. No login required. Gameplay works offline.</p>
+      <p>🛡️ <strong>Short version:</strong> We collect absolutely nothing. No data leaves your device. No accounts. No ads. No tracking. No internet required. The game works entirely on your device.</p>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">2</span> Information We Collect</div>
-    <p>We do not require account creation or any personal information to play the game. We do not directly collect or store any personal data on our own servers.</p>
+    <div class="section-title"><span class="num">2</span> Information We Do NOT Collect</div>
+    <p>The App does not collect any of the following:</p>
     <div class="pill-row">
-      <span class="pill red">✕ No names or emails</span>
-      <span class="pill red">✕ No location data</span>
-      <span class="pill red">✕ No login required</span>
-      <span class="pill red">✕ No personal profiles</span>
+      <span class="pill red">✕ Personal information</span>
+      <span class="pill red">✕ Email addresses</span>
+      <span class="pill red">✕ Names or usernames</span>
+      <span class="pill red">✕ Device identifiers</span>
+      <span class="pill red">✕ Advertising ID (GAID)</span>
+      <span class="pill red">✕ Location data</span>
+      <span class="pill red">✕ Usage analytics</span>
+      <span class="pill red">✕ Crash reports</span>
+      <span class="pill red">✕ Purchase history</span>
+      <span class="pill red">✕ Contact information</span>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">3</span> Advertisements (Google AdMob)</div>
-    <p>This app uses <strong>Google AdMob</strong> to display advertisements including banner, interstitial, and rewarded ads. AdMob is a third-party advertising service provided by Google LLC.</p>
-    <div class="warn-box">
-      <p>⚠️ AdMob may automatically collect and process the following information to serve and improve ads:</p>
-    </div>
-    <ul class="bullet-list">
-      <li>Device identifiers (such as Advertising ID / GAID)</li>
-      <li>Approximate location (based on IP address)</li>
-      <li>Device information (model, OS version, screen size)</li>
-      <li>App usage and interaction data</li>
-      <li>IP address</li>
-    </ul>
-    <p style="margin-top:14px;">This data may be used to display personalized or non-personalized advertisements, improve ad performance, and prevent fraud and abuse.</p>
-    <p>Ads may be personalized or non-personalized depending on your device settings, location, and consent. You can control ad personalization through your device settings under <strong>Google → Ads</strong> or by opting out of interest-based ads on your Android device.</p>
-    <p>For more details on how Google handles this data, please see Google's Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+    <div class="section-title"><span class="num">3</span> Advertisements</div>
+    <p>King vs Monsters : Platformer contains absolutely no advertisements of any kind. There are no banner ads, video ads, interstitial ads, rewarded ads, or any other form of advertising anywhere in the App.</p>
+    <p>We do not use Google AdMob, Facebook Audience Network, or any other advertising SDK. We do not use the Google Advertising ID (com.google.android.gms.permission.AD_ID) or any equivalent identifier. This permission is not declared or used in our application.</p>
     <div class="pill-row">
-      <span class="pill amber">✓ Google AdMob</span>
-      <span class="pill red">✕ No other ad networks</span>
-      <span class="pill red">✕ No direct data storage by us</span>
+      <span class="pill red">✕ No AdMob</span>
+      <span class="pill red">✕ No banner ads</span>
+      <span class="pill red">✕ No video ads</span>
+      <span class="pill red">✕ No interstitial ads</span>
+      <span class="pill red">✕ No Advertising ID</span>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">4</span> Internet Access</div>
-    <p>The App does not require an internet connection for core gameplay. Internet access is only used to load and display advertisements through Google AdMob. All gameplay mechanics function completely offline.</p>
+    <div class="section-title"><span class="num">4</span> Internet &amp; Permissions</div>
+    <p>The App does not require an internet connection to function. This is a fully offline game — all gameplay happens entirely on your device with zero network communication at any time.</p>
+    <p>The App does not request any sensitive Android permissions. There is no access to your camera, microphone, contacts, storage, location, or any other device feature beyond what is required to run the game itself.</p>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">5</span> Children's Privacy</div>
-    <p>This App is intended for a general audience and is not specifically directed to children under the age of 13. We do not knowingly collect personal data from children. If you believe that a child has provided personal information through this App, please contact us so we can take appropriate action.</p>
-    <p>AdMob's data collection practices for children's apps may differ. Please refer to Google's policies for more information.</p>
+    <div class="section-title"><span class="num">5</span> Login &amp; Accounts</div>
+    <p>King vs Monsters : Platformer has no login system, no account creation, no password, and no user profile of any kind. You simply download and play — no sign-up, no registration, nothing required.</p>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">6</span> Your Choices and Rights</div>
-    <p>You can limit or disable ad personalization through your Android device settings. Depending on your region, you may have additional rights related to your personal data under applicable privacy laws such as GDPR or CCPA.</p>
-    <p>To opt out of interest-based advertising, go to <strong>Settings → Google → Ads → Opt out of Ads Personalization</strong> on your Android device.</p>
+    <div class="section-title"><span class="num">6</span> Third-Party Services</div>
+    <p>The App does not integrate any third-party SDKs, analytics platforms, advertising networks, crash reporting tools, or external services of any kind. There are no connections to external servers and no data is transmitted to us or any third party at any time.</p>
+    <div class="pill-row">
+      <span class="pill red">✕ No AdMob</span>
+      <span class="pill red">✕ No Google Analytics</span>
+      <span class="pill red">✕ No Firebase</span>
+      <span class="pill red">✕ No Facebook SDK</span>
+      <span class="pill red">✕ No third-party SDKs</span>
+    </div>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">7</span> Data Security</div>
-    <p>We do not store personal data on our own servers. Third-party services such as Google AdMob handle data securely according to their own privacy policies and industry-standard security practices. We have no access to the data collected by AdMob.</p>
+    <div class="section-title"><span class="num">7</span> Children's Privacy</div>
+    <p>The App is safe for users of all ages. Since we do not collect any personal information from anyone, there is no risk to children's privacy. The App fully complies with the Children's Online Privacy Protection Act (COPPA) and Google Play's Families Policy.</p>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">8</span> Changes to This Policy</div>
+    <div class="section-title"><span class="num">8</span> Data Security</div>
+    <p>Since no personal data is collected or transmitted by the App, there is no personal data at risk. Any game progress or settings are stored locally on your device only and are never sent anywhere.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="num">9</span> Changes to This Policy</div>
     <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. We encourage you to review this policy periodically. Continued use of the App after any changes constitutes acceptance of the updated policy.</p>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">9</span> Contact Us</div>
+    <div class="section-title"><span class="num">10</span> Contact Us</div>
     <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
     <div class="contact-box">
       <div class="contact-icon">✉️</div>
@@ -341,7 +310,7 @@
 
 <div class="footer">
   <strong>Privacy Policy — King vs Monsters : Platformer by Dragoster Studios</strong><br>
-  Effective Date: May 13, 2026 &nbsp;·&nbsp; Advertisements served by Google AdMob. No personal data collected directly by us.
+  Effective Date: May 13, 2026 &nbsp;·&nbsp; This app does not collect, store, or share any personal data.
 </div>
 
 </body>
